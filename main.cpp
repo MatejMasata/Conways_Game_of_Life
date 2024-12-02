@@ -1,5 +1,6 @@
 #include <raylib.h>
-#include "grid.cpp"
+#include <iostream>
+#include "simulation.hpp"
 
 int main()
 {
@@ -12,8 +13,13 @@ int main()
 
     InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Game of life");
     SetTargetFPS(FPS);
-    Grid grid{WINDOW_WIDTH, WINDOW_HEIGHT, CELL_SIZE};
-    grid.SetValue(0, 0, 1);
+    Simulation simulation{WINDOW_WIDTH, WINDOW_HEIGHT, CELL_SIZE};
+    simulation.SetCellValue(3,4,1);
+    simulation.SetCellValue(3,5,1);
+    simulation.SetCellValue(4,4,1);
+    simulation.SetCellValue(2,4,1);
+
+    std::cout << simulation.CountLiveNeighbors(3,4) << std::endl;
 
     // Simulacni smycka
     // WindowShouldClose() - True pokud zmacknut esc nebo tlacitko zavrit
@@ -22,11 +28,11 @@ int main()
         // Event handling
 
         // Updating state
-
+ 
         // Drawing
         BeginDrawing();
         ClearBackground(BackgroundColor);
-        grid.Draw();
+        simulation.Draw();
         EndDrawing();
     }
     

@@ -10,7 +10,11 @@ class Grid
         void Draw();
 
         void SetValue(int row, int column, int value);
-        
+
+        int GetValue(int row, int column);
+
+        bool IsWithinBounds(int row, int column);
+
     private:
         int rows;
         int columns;

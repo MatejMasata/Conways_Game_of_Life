@@ -1,1 +1,1 @@
-g++ main.cpp -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
+g++ main.cpp simulation.cpp grid.cpp -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
