@@ -53,5 +53,12 @@ sudo make install # Static version.
 
 2. Přeložení kódu pomocí
 ```
-git@github.com:MatejMasata/Conways_Game_of_Life.git
+bash build.bash
 ```
+
+3. Spuštění binárního souboru 
+```
+./build/GameOfLife 
+```
+
+4. Ukončení hry pomocí *esc* nebo *tlačítka pro ukončení programu*
