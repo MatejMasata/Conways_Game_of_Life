@@ -29,10 +29,48 @@ int Simulation::CountLiveNeighbors(int row, int column)
 
     for(const auto& offset : neighborOffsets)
     {
-        int neighborRow = row + offset.first;
-        int neighborColumn = column + offset.second;
+        int neighborRow = (row + offset.first + grid.GetRows()) % grid.GetRows();
+        int neighborColumn = (column + offset.second +grid.GetColumns()) % grid.GetColumns();
         liveNeighbors += grid.GetValue(neighborRow, neighborColumn);
     }
 
     return liveNeighbors;
+}
+
+void Simulation::Update()
+{
+    for(int row = 0; row < grid.GetRows(); row++)
+    {
+        for(int column = 0; column < grid.GetColumns(); column++)
+        {
+            int liveNeighbors = CountLiveNeighbors(row, column);
+            int cellValue = grid.GetValue(row, column);
+
+            // rule 1
+            if(cellValue == 1)
+            {
+                if(liveNeighbors > 3 || liveNeighbors < 2)
+                {
+                    tempGrid.SetValue(row, column, 0);
+                }
+                else
+                {
+                    tempGrid.SetValue(row, column, 1);
+                }
+            }
+            else
+            {
+                if (liveNeighbors == 3)
+                {
+                    tempGrid.SetValue(row, column, 1);
+                }
+                else
+                {
+                    tempGrid.SetValue(row, column, 0);
+                }
+                
+            }
+        }
+    }
+    grid = tempGrid;
 }
