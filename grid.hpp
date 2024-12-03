@@ -21,6 +21,10 @@ class Grid
 
         void FillRandom();
 
+        void Clear();
+
+        void ToggleCell(int row, int column);
+
     private:
         int rows;
         int columns;
