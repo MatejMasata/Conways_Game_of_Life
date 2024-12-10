@@ -62,3 +62,20 @@ bash build.bash
 ```
 
 4. Ukončení hry pomocí *esc* nebo *tlačítka pro ukončení programu*
+
+
+### Ovládání hry
+
+`LEVÉ TLAČÍTKO MYŠI` - změna stavu buňky
+
+Tlačítko `ENTER` - Spuštění simulace
+
+Tlačítko `SPACE` - Pozastavení simulace
+
+Tlačítko `F` - Zrychlení simulace
+
+Tlačítko `S` - Zpomalení simulace
+ 
+Tlačítko `R` - Vygenerování náhodného stavu hry
+
+Tlačítko `C` - Vyčištění hracího pole = všechny buňky jsou mrtvé
